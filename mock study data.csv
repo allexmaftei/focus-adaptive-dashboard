@@ -1,1 +1,15 @@
-
+Date,Hour,Subject,Duration_Min,Distractions,Focus_Rating
+2026-05-15,19,Math,51,3,4
+2026-05-15,17,History,42,1,5
+2026-05-16,21,Physics,49,6,2
+2026-05-17,15,English,30,2,4
+2026-05-17,20,Chemistry,58,3,3
+2026-05-18,16,Math,65,5,3
+2026-05-18,22,Physics,38,7,1
+2026-05-19,15,History,45,0,5
+2026-05-19,17,English,25,1,5
+2026-05-20,19,Chemistry,40,4,3
+2026-05-21,16,Math,55,4,3
+2026-05-22,20,Physics,72,5,2
+2026-05-23,15,English,35,1,5
+2026-05-24,17,History,50,2,4
