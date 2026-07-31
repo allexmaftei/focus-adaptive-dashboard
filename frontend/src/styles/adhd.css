@@ -1,0 +1,41 @@
+/**
+ * ADHD Focus Mode.
+ *
+ * Port of the <style> block Streamlit injected at runtime
+ * (legacy/streamlit_app.py:55-71) — same typography and colour intent, but as
+ * real CSS driven by a body class the accessibility store toggles.
+ */
+
+body.adhd-mode {
+  --font-size-base: 1.15rem;
+  --letter-spacing: 0.06rem;
+  --line-height: 1.7;
+  --heading-color: #0072b2;
+  --radius: 12px;
+}
+
+body.adhd-mode h1,
+body.adhd-mode h2,
+body.adhd-mode h3 {
+  font-weight: 800;
+}
+
+body.adhd-mode button {
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+/* Bionic-reading emphasis should read as weight, not as a second colour. */
+body.adhd-mode .bionic b {
+  font-weight: 800;
+  color: inherit;
+}
+
+/* Wider reading measure and calmer spacing in the low-friction layout. */
+body.adhd-mode .main {
+  max-width: 1180px;
+}
+
+body.adhd-mode .card {
+  padding: 1.5rem;
+}

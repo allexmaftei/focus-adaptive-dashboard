@@ -1,0 +1,259 @@
+:root {
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --border: #dfe4ec;
+  --text: #16202e;
+  --text-muted: #5c6b80;
+  --accent: #0072b2;
+  --accent-contrast: #ffffff;
+  --danger: #b3261e;
+  --success: #106b3f;
+
+  /* Overridden by .adhd-mode (styles/adhd.css). */
+  --font-size-base: 1rem;
+  --letter-spacing: normal;
+  --line-height: 1.55;
+  --heading-color: var(--text);
+  --radius: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--heading-color);
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+}
+
+/* ---------- layout ---------- */
+
+.app {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 1.5rem 1.25rem;
+}
+
+.main {
+  padding: 1.75rem 2rem 4rem;
+  min-width: 0;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.25rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 860px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .main {
+    padding: 1.25rem;
+  }
+}
+
+/* ---------- surfaces ---------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+.section {
+  margin-bottom: 1.75rem;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.75rem 0;
+}
+
+/* ---------- forms ---------- */
+
+.field {
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.field > span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='date'],
+input[type='file'],
+select {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--accent);
+}
+
+button.link-danger {
+  background: none;
+  border: none;
+  color: var(--danger);
+  padding: 0.15rem 0.4rem;
+  font-size: 0.85em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- toggles ---------- */
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+  cursor: pointer;
+}
+
+.toggle input {
+  width: 2.6rem;
+  height: 1.4rem;
+  accent-color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ---------- feedback ---------- */
+
+.alert {
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  margin-bottom: 1rem;
+  border: 1px solid;
+}
+
+.alert.info {
+  border-color: var(--accent);
+  background: #eaf4fb;
+  color: #10405c;
+}
+
+.alert.error {
+  border-color: var(--danger);
+  background: #fdecea;
+  color: var(--danger);
+}
+
+.alert.success {
+  border-color: var(--success);
+  background: #e8f5ee;
+  color: var(--success);
+}
+
+/* ---------- misc ---------- */
+
+.chip-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.4rem 0.25rem 0.8rem;
+  background: var(--bg);
+  font-size: 0.9em;
+}
+
+.plot {
+  width: 100%;
+  height: 340px;
+}
